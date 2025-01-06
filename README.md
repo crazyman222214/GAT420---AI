@@ -1,1 +1,3 @@
-# AI-Dev
+# GAT420 - Artificial Intelligence
+
+---
