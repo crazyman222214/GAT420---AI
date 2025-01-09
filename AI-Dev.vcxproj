@@ -24,6 +24,7 @@
     <ProjectGuid>{518b74a6-7a5a-40ae-80ab-320d5408b056}</ProjectGuid>
     <RootNamespace>AIDev</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>GAT420 - AI</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -159,6 +160,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Source\CAScene.h" />
+    <ClInclude Include="Source\Cell.h" />
     <ClInclude Include="Source\Color.h" />
     <ClInclude Include="Source\ETime.h" />
     <ClInclude Include="Source\ExampleScene.h" />
@@ -170,6 +173,7 @@
     <ClInclude Include="Source\Scene.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\CAScene.cpp" />
     <ClCompile Include="Source\ETime.cpp" />
     <ClCompile Include="Source\ExampleScene.cpp" />
     <ClCompile Include="Source\Framebuffer.cpp" />
