@@ -1,19 +1,19 @@
 #include "CAScene.h"
 #include <iostream>
 
-color_t white{ 255, 255, 255, 255 };
-color_t black{ 0, 0, 0, 255 };
+const color_t white{ 255, 255, 255, 255 };
+const color_t black{ 0, 0, 0, 255 };
 
 bool CAScene::Initialize()
 {
 	m_renderer.Initialize();
-	m_renderer.CreateWindow("Example", 800, 600);
+	m_renderer.CreateWindow("GOL", 800, 600);
 
 	m_input.Initialize();
 	m_input.Update();
 
 	m_framebuffer = std::make_unique<Framebuffer>(m_renderer, m_renderer.m_width, m_renderer.m_height);
-	m_cells = std::make_unique<Cells<bool>>(m_renderer.m_width, m_renderer.m_height);
+	m_cells = std::make_unique<Cells<uint8_t>>(m_renderer.m_width, m_renderer.m_height);
 
 
 
@@ -22,24 +22,10 @@ bool CAScene::Initialize()
 
 void CAScene::Update()
 {
-	m_time.Tick();
-	m_input.Update();
-
-	SDL_Event event;
-	while (SDL_PollEvent(&event))
-	{
-		if (event.type == SDL_QUIT)
-		{
-			m_quit = true;
-		}
-		if (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_ESCAPE)
-		{
-			m_quit = true;
-		}
-	}
+	Scene::Update();
 
 	m_cells->Write(m_cells->m_width / 2, 0, 1);
-	uint8_t rule = 210;
+	uint8_t rule = 12;
 
 	for (int y = 0; y < m_cells->m_height - 1; y++)
 	{

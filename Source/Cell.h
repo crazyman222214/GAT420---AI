@@ -11,7 +11,7 @@ public:
 		m_data.resize(width * height);
 	}
 
-	const T& Read(int x, int y) const { return m_data[x + (y * m_width)]; }
+	T Read(int x, int y) const { return m_data[x + (y * m_width)]; }
 	void Write(int x, int y, const T& data) { m_data[x + (y * m_width)] = data; }
 
 
